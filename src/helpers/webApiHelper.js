@@ -1,7 +1,5 @@
-import * as queryString from 'query-string';
-
 const getFetchUrl = (args) => {
-  return args.endpoint /* + (args.query ? `?${queryString.stringify(args.query)}` : '')*/;
+  return args.endpoint;
 };
 
 const getFetchArgs = (args) => {
