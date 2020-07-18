@@ -1,0 +1,7 @@
+.chat-footer {
+  background-color: #00796b;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1% 5%;
+}

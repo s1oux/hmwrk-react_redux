@@ -1,0 +1,37 @@
+.messages__input {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 20px;
+}
+
+.messages__input-field {
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-color: #009688;
+  resize: none;
+  padding: 5px;
+}
+
+.messages__input-field:focus {
+  outline: none;
+}
+
+.messages__input-btn {
+  background-color: #009688;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.messages__input-btn:hover {
+  background-color: #00796b;
+}
+
+.messages__input-btn:focus {
+  outline: none;
+}
