@@ -7,3 +7,7 @@ Solution for **React (part 1)** homework. BSA-20
 `npm start`
 
 open http://localhost:3000/
+
+## heroku deploy
+
+[deployed app](https://hmwrk-react.herokuapp.com/)
