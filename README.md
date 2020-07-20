@@ -10,4 +10,4 @@ open http://localhost:3000/
 
 ## heroku deploy
 
-[deployed app](https://hmwrk-react_redux.herokuapp.com/)
+[deployed app](https://hmwrk-react-redux.herokuapp.com/)
