@@ -1,4 +1,4 @@
-Solution for **React (part 1)** homework. BSA-20
+Solution for **React-Redux (part 2)** homework. BSA-20
 
 ## Installation
 
@@ -10,4 +10,4 @@ open http://localhost:3000/
 
 ## heroku deploy
 
-[deployed app](https://hmwrk-react.herokuapp.com/)
+[deployed app](https://hmwrk-react_redux.herokuapp.com/)

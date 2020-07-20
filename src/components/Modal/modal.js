@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './modal.css';
 
-const Modal = ({ toggleModal, editMessage, messageToEdit }) => {
+const Modal = ({ toggle, editMessage, messageToEdit }) => {
   const [text, setText] = useState(messageToEdit.text);
   const [isTextValid, setIsTextValid] = useState(true);
 
@@ -20,9 +20,14 @@ const Modal = ({ toggleModal, editMessage, messageToEdit }) => {
     if (!isValid) {
       return;
     }
-    editMessage(messageToEdit.id, text);
+    const updatedMessage = {
+      ...messageToEdit,
+      text: text,
+    };
+
+    editMessage(updatedMessage);
     clearForm();
-    toggleModal();
+    toggle();
   };
 
   return (
@@ -30,7 +35,7 @@ const Modal = ({ toggleModal, editMessage, messageToEdit }) => {
       <div className="modal-root">
         <div className="modal-header">
           <span>Edit Message</span>
-          <div className="close-btn" onClick={() => toggleModal()}>
+          <div className="close-btn" onClick={() => toggle()}>
             <i className="fa fa-times" aria-hidden="true"></i>
           </div>
         </div>

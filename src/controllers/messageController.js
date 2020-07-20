@@ -52,9 +52,6 @@ export const groupMessagesByDate = (messages) => {
   return groupArrays;
 };
 
-export const getLastMessageDate = (messages) =>
-  messages[messages.length - 1].createdAt;
-
 export const createMessage = (user) => {
   return (messageText) => ({
     id: Math.random() + user.name,
@@ -66,21 +63,9 @@ export const createMessage = (user) => {
   });
 };
 
-export const updateMessage = (messages) => {
-  return (messageId, messageText) => {
-    return messages.map((message) => {
-      if (messageId === message.id) {
-        message.text = messageText;
-      }
-      return message;
-    });
-  };
-};
-
-export const deleteMessage = (messages) => {
-  return (messageId) => {
-    return messages.filter((message) => message.id !== messageId);
-  };
+export const getLastUserMessage = (user, messages) => {
+  const userMessages = messages.filter((message) => message.userId === user.id);
+  return userMessages[userMessages.length - 1];
 };
 
 export const isLikedByUser = (message, user) => {

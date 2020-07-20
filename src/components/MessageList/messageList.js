@@ -22,7 +22,7 @@ const messageList = ({
               key={id}
               user={user}
               message={message}
-              toggleModal={toggle}
+              toggle={toggle}
               remove={remove}
               like={like}
             />

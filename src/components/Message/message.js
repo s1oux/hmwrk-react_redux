@@ -6,31 +6,34 @@ import { isCurrentUserMessage } from '../../controllers/userController';
 
 import './message.css';
 
-const message = ({ user, message, remove, toggleModal, like }) => {
+const message = ({ user, message, remove, toggle, like }) => {
   const isOwnMessage = isCurrentUserMessage(user, message);
   const classes = ['message'];
-  const actionClasses = ['message__action', 'message__action-like'];
-  actionClasses.push(isLikedByUser(message, user) ? 'liked' : '');
+  const actionLikeClasses = ['message__action', 'message__action-like'];
+  actionLikeClasses.push(isLikedByUser(message, user) ? 'liked' : '');
   classes.push(isOwnMessage ? 'ownMessage' : '');
 
   const actions = isOwnMessage ? (
     <div className="message__actions">
       <div
         className="message__action message__action-ctrl"
-        onClick={() => toggleModal(message)}
+        onClick={() => toggle(message)}
       >
         edit
       </div>
       <div
         className="message__action message__action-ctrl"
-        onClick={() => remove(message.id)}
+        onClick={() => remove(message)}
       >
         remove
       </div>
     </div>
   ) : (
     <div className="message__actions">
-      <div onClick={() => like(message.id)} className={actionClasses.join(' ')}>
+      <div
+        onClick={() => like(message.id)}
+        className={actionLikeClasses.join(' ')}
+      >
         {message.likes.length}{' '}
         <i className="fa fa-thumbs-up" aria-hidden="true"></i>
       </div>
@@ -39,9 +42,7 @@ const message = ({ user, message, remove, toggleModal, like }) => {
 
   return (
     <div className={classes.join(' ')}>
-      {isOwnMessage ? (
-        ''
-      ) : (
+      {!isOwnMessage && (
         <div className="message__avatar">
           <div className="shadow"></div>
           <img

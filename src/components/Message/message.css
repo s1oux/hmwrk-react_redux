@@ -124,3 +124,11 @@
 .message__action-like.liked {
   color: #212121;
 }
+
+.ownMessage .message__actions {
+  visibility: hidden;
+}
+
+.ownMessage:hover .message__actions {
+  visibility: visible;
+}

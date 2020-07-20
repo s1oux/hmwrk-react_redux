@@ -1,0 +1,2 @@
+export const SET_USER = 'USER_ACTION:SET_USER';
+export const SET_USER_COUNT = 'USER_ACTION:SET_USER_COUNT';
